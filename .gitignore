@@ -1,0 +1,9 @@
+## miscs
+.bloop/
+.metals/
+.project/
+.vscode/
+.idea/
+.bsp/
+**/target/
+**/metals.*
