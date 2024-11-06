@@ -1,10 +1,22 @@
 package handson.zio.common
 
-import zio.Console.*
 import zio.*
+import zio.Console.*
+
 import java.io.IOException
 
 object Printer:
 
-  def printMe(line: String): ZIO[Any, IOException, Unit] =
-    printLine(s"Hi, $line!")
+  import Converter.given
+
+  def printMe(message: String): IO[String, Unit] =
+    printLine(s"Hi, $message!")
+
+object Converter:
+
+  given convertToIOString: Conversion[IO[IOException, Unit], IO[String, Unit]] with
+    override def apply(x: IO[IOException, Unit]): IO[String, Unit] = x.mapError(_.getMessage)
+
+  extension [A](task: Task[A])
+    def convertToIO: IO[String, A] =
+      task.mapError(_.getMessage)

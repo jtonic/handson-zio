@@ -3,7 +3,9 @@
 .metals/
 .project/
 .vscode/
-.idea/
 .bsp/
 **/target/
 **/metals.*
+
+.idea/*
+!.idea/runConfigurations
