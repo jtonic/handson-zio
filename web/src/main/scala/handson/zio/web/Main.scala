@@ -22,5 +22,5 @@ object Main extends ZIOAppDefault:
         _ <- ZIO.fail(new IOException("Oops!")).convertToIO
         _ <- ZIO.fromTry(Try(54 / 0)).convertToIO
         personAge <- ZIO.fromOption(Some(2)).orElseFail(new RuntimeException("No age found")).convertToIO
-        _ <- printMe(name)
+        _ <- print(name)
     yield ()

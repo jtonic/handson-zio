@@ -9,7 +9,7 @@ object Printer:
 
   import Converter.given
 
-  def printMe(message: String): IO[String, Unit] =
+  def print(message: String): IO[String, Unit] =
     printLine(s"Hi, $message!")
 
 object Converter:
