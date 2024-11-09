@@ -1,5 +1,9 @@
 # README
 
+## TODO
+
+See [TODO](./doc/todo.md)
+
 ## How to run the project
 
 - shortest version
